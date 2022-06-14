@@ -1,0 +1,94 @@
+{
+  "main": {
+    "id": "1a7841c5d4fef1d5",
+    "type": "split",
+    "children": [
+      {
+        "id": "f8377258838302f0",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "2.react-component.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "81f9dcfde412ad76",
+    "type": "split",
+    "children": [
+      {
+        "id": "b6a9ab575de90c01",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8ba0bc7874613b71",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "0302205d56b2d8cc",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ed683c58b856a948",
+    "type": "split",
+    "children": [
+      {
+        "id": "104191d36619cdab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ebc3b6909484160e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2.react-component.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "f8377258838302f0",
+  "lastOpenFiles": [
+    "2.react-component.md",
+    "1. react-element.md"
+  ]
+}
