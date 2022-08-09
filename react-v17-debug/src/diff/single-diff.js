@@ -10,6 +10,7 @@ const Diff = () => {
   const b = (
     <ul>
       <p key='1'>PPP</p>
+      <li key= '2'>Tow</li>
     </ul>
   )
   return <div onClick={() => setNum(pre => pre + 1)}>
