@@ -1,28 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
-import { useState } from 'React'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Diff from './diff'
 
 function App() {
-  const [num, setNum] = useState(0)
   return (
-    <div className="App">
-      <header className="App-header">
-        <p
-          title={num}
-          onClick={() => setNum(num => num + 1)}
-        >
-          Edit <code>{num}</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/diff">Diff</Link>
+          </li>
+        </ul>
+      </nav>
+      <Switch>
+        <Route path="/diff">
+          <Diff />
+        </Route>
+      </Switch>
     </div>
+  </Router>
+  
   );
 }
 
