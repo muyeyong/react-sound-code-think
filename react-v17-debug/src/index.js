@@ -1,10 +1,15 @@
 import React from 'react';
 import './index.css';
 import App from './App';
-import { render } from "react-dom";
+import  ReactDom from "react-dom";
 
 
+// 并发运行
+ReactDom.unstable_createRoot(document.getElementById('root')).render(<App />)
 
-render( <App />, document.getElementById('root'))
+// 同步运行
+// ReactDom.render( <App />, document.getElementById('root'))
+
+
 
 
