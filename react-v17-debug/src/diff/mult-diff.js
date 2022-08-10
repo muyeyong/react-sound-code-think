@@ -5,13 +5,13 @@ const Diff = () => {
   const a = (
     <ul>
       <li key='1'>1</li>
-      <li key='2'>2</li>
     </ul>
   )
   const b = (
     <ul>
-      <li key='2'>2</li>
       <li key='1'>1</li>
+      <li key='2'>2</li>
+      <li key='3'>3</li>
     </ul>
   )
   return <>
