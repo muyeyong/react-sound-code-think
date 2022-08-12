@@ -8,6 +8,7 @@ import {
 import Diff from './diff/single-diff'
 import MultDiff from './diff/mult-diff'
 import UpdateBase from './update/base';
+import UpdateSchdule from './update/schedule'
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           <li>
             <Link to="/updateBase">update-base</Link>
           </li>
+          <li>
+            <Link to="/UpdateSchdule">update-Schedule</Link>
+          </li>
         </ul>
       </nav>
       <Switch>
@@ -35,6 +39,9 @@ function App() {
         </Route>
         <Route path="/updateBase">
           <UpdateBase />
+        </Route>
+        <Route path="/UpdateSchdule">
+          <UpdateSchdule />
         </Route>
       </Switch>
     </div>
