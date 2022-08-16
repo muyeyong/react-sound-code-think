@@ -9,6 +9,7 @@ import Diff from './diff/single-diff'
 import MultDiff from './diff/mult-diff'
 import UpdateBase from './update/base';
 import UpdateSchdule from './update/schedule'
+import HookUseState from './hook/useStateAndUseLayout'
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           <li>
             <Link to="/UpdateSchdule">update-Schedule</Link>
           </li>
+          <li>
+            <Link to="/HookUseState">hook-useState</Link>
+          </li>
         </ul>
       </nav>
       <Switch>
@@ -42,6 +46,9 @@ function App() {
         </Route>
         <Route path="/UpdateSchdule">
           <UpdateSchdule />
+        </Route>
+        <Route path="/HookUseState">
+          <HookUseState />
         </Route>
       </Switch>
     </div>
