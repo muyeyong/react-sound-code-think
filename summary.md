@@ -53,3 +53,7 @@ task：小顶堆结构
 都需要创建三个对象： ReactDom(blocking)Root<包含render和unmount方法>、FiberRoot<fibeRoot对象存储创建fiber的全局状态> 和HostRootFiber<第一个fiber对象，fiber树的根节点>
 
 将react-dom和react-reconciler连接： updateContainer里面调用
+
+## [优先级管理](https://react-illustration-series.osrc.com/main/priority)
+
+两套优先级结构，一套相互转换结构
