@@ -57,3 +57,33 @@ task：小顶堆结构
 ## [优先级管理](https://react-illustration-series.osrc.com/main/priority)
 
 两套优先级结构，一套相互转换结构
+
+scheduler优先级--> schedulerPriority ：scheduler包
+
+fiber优先级 --> lanePriority：react-reconciler包
+
+reactPriorityLevel 优先级转换： react-reconciler包
+
+## [调度原理](https://react-illustration-series.osrc.com/main/scheduler)
+
+通过`messageChannel` 请求调度(异步执行)，最终调用的是`scheduledHostCallback`。将需要调度的函数存在`scheduledHostCallback`
+
+流程： 创建任务(unstable_scheduleCallback) --> 请求调度(requestHostCallback(flushWork)) ---> 执行回调(时间分片 以及 可中断渲染)
+
+flushWork执行workLoop，workLoop内部的while循环会从任务队列取出任务执行，在这个过程中会判断task是否超时(任务创建时间 + 任务分配执行时间 > 当前时间) 以及在执行task的时候产生了新的回调处理，每一次while循环的退出就是一次时间分片。
+
+时间分片原理：分配时间，超时退出
+[可中断渲染原理]( https://react-illustration-series.osrc.com/main/scheduler#%E5%8F%AF%E4%B8%AD%E6%96%AD%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86)：fiber树的构建过程中， 每构造完成一个单元, 都会检测一次超时，不是很懂？
+
+节流防抖(正对同一个fiber)：
+
+​		防抖： 新旧更新的优先级相同，多次setState，不会创建多个task，直接退出
+
+​		节流：新旧更新的优先级不同，取消旧的task，创建新的task
+
+🤔：
+
+​	 **那些可以被称作task 或者 什么时候创建task**
+
+​	 **task派生的callback怎么处理的**
+
