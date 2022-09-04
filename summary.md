@@ -87,3 +87,28 @@ flushWork执行workLoop，workLoop内部的while循环会从任务队列取出�
 
 ​	 **task派生的callback怎么处理的**
 
+​	task 与 update的关系
+
+## fiber树构建-基础准备
+
+🤔：
+
+​	setState同步异步问题：什么情况下执行上下文为空？ 首次加载？ executionContext === NoContext
+
+## fiber树构建-初次创建
+
+beginWork：
+
+1. 根据 `ReactElement`对象创建所有的`fiber`节点, 最终构造出`fiber树形结构`(设置`return`和`sibling`指针)
+2. 设置`fiber.flags`(二进制形式变量, 用来标记 `fiber`节点 的`增,删,改`状态, 等待`completeWork阶段处理`)
+3. 设置`fiber.stateNode`局部状态(如`Class类型`节点: `fiber.stateNode=new Class()`)
+
+completeWork：
+
+1. 给`fiber`节点(tag=HostComponent, HostText)创建 DOM 实例, 设置`fiber.stateNode`局部状态(如`tag=HostComponent, HostText`节点: fiber.stateNode 指向这个 DOM 实例).
+
+2. 为 DOM 节点设置属性, 绑定事件(这里先说明有这个步骤, 详细的事件处理流程, 在`合成事件原理`中详细说明).
+
+3. 设置`fiber.flags`标记
+
+🤔：对于设置fiber.flags是在什么情况下才有的？
