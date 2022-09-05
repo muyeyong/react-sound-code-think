@@ -112,3 +112,17 @@ completeWork：
 3. 设置`fiber.flags`标记
 
 🤔：对于设置fiber.flags是在什么情况下才有的？
+
+## [fiber树构造-对比更新](https://react-illustration-series.osrc.com/main/fibertree-update)
+
+childLans
+
+lans
+
+fiber.flags
+
+fiber.effects
+
+对于这些变量还不太了解，渲染优先级跟fiber.lane 怎么赋值，怎么计算，lane这块还是不太熟悉
+
+相对于初次创建，多了对比的过程，beginWork向下查找那些需要更新的，completeWork将副作用上移、生成dom实例
