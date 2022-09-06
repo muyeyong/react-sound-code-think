@@ -91,9 +91,17 @@ flushWork执行workLoop，workLoop内部的while循环会从任务队列取出�
 
 ## fiber树构建-基础准备
 
+update.lanes: leagcy 和 blocking 的优先级是 syncLane， concurrent是根据调度优先级创建lane优先级
+
+渲染优先级：每次调度之前都需要计算出全局渲染的优先级(getNextLanes)，根据fiberRoot上的属性(`expiredLanes`, `suspendedLanes`, `pingedLanes`等)，确定最紧要的优先级， 如果update 或 fiber的lanes低于渲染优先级，就会被忽略
+
+fiber.lanes:  分为两个部分，fiber.lanes 和 fiber.childLanes，初始化都是NoLanes
+
 🤔：
 
 ​	setState同步异步问题：什么情况下执行上下文为空？ 首次加载？ executionContext === NoContext
+
+​	fiber.lanes什么时候更新
 
 ## fiber树构建-初次创建
 
