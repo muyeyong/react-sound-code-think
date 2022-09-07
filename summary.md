@@ -119,7 +119,19 @@ completeWork：
 
 3. 设置`fiber.flags`标记
 
-🤔：对于设置fiber.flags是在什么情况下才有的？
+2022-09-07：
+
+​	beginWork 不断向下构架fiber子树，同时设置fiber.flags
+
+​	completeWork 创造对应的dom(ClassComponent跳过)，同时将fiber.flags上移，最终在fiberRoot的firstEffect 和 lastEffect
+
+🤔：
+
+对于设置fiber.flags是在什么情况下才有的？
+
+beginWork 会执行一些声明周期，都有哪些？
+
+上移副作用队列: 由于本节点`fiber(header)`没有副作用(`fiber.flags = 0`), 所以执行之后副作用队列没有实质变化(目前为空) 什么时候有副作用？
 
 ## [fiber树构造-对比更新](https://react-illustration-series.osrc.com/main/fibertree-update)
 
