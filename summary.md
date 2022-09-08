@@ -146,3 +146,15 @@ fiber.effects
 对于这些变量还不太了解，渲染优先级跟fiber.lane 怎么赋值，怎么计算，lane这块还是不太熟悉
 
 相对于初次创建，多了对比的过程，beginWork向下查找那些需要更新的，completeWork将副作用上移、生成dom实例
+
+🤔:
+
+​	对于更新，需要向上查找，然后自定向下？
+
+## [fiber树渲染](https://react-illustration-series.osrc.com/main/fibertree-commit)
+
+🤔:
+
+​	首个hostComponent.stateNode 怎么将子节点全部收集的？ appendChild?
+
+​	副作用队列处理结构是什么 ==> 单个`fiber`对象
