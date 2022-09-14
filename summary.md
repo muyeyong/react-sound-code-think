@@ -158,3 +158,24 @@ fiber.effects
 ​	首个hostComponent.stateNode 怎么将子节点全部收集的？ appendChild?
 
 ​	副作用队列处理结构是什么 ==> 单个`fiber`对象
+
+## [Hook原理](https://react-illustration-series.osrc.com/main/hook-summary)
+
+hook存储在fiber.memoizedState链表中，双缓存实现了hook的不丢失，实现了hook从current到workInprogress的转移，从而实现数据持久化
+
+状态hook：没有副作用，且数据可以持久化，useState useCallBack useMemo useRef useReducer
+
+副作用hook：直接或间接调用了useEffect，useEffect useLayoutEffect
+
+组合hook：使用了两种以上hook
+
+副作用hook会修改fiber.flags，所有存在副作用的fiber会被添加到父节点的副作用队列，会在commit阶段处理
+
+## [合成事件](https://react-illustration-series.osrc.com/main/synthetic-event)
+
+监听所有的原生事件
+
+收集fiber上的事件 （一直向上遍历）fiber.memoizedProps，变成一个事件集合
+
+执行事件集合，模拟执行捕获、冒泡阶段
+
